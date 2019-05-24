@@ -19,7 +19,7 @@
   <run_depend>razor_imu_9dof</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>tf2_ros</run_depend>
-  <run_depend>urg_node</run_depend>
+  <run_depend>rplidar</run_depend>
   <run_depend>joy</run_depend>
   <run_depend>joy_teleop</run_depend>
   <run_depend>laser_scan_matcher</run_depend>

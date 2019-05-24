@@ -82,19 +82,13 @@ catkin_package(
     razor_imu_9dof
     tf
     tf2_ros
-    urg_node
+    rplidar
     joy
     joy_teleop
     laser_scan_matcher
     rosbag
     rostopic
     rviz
-    # specific to racecar-v1
-    #pointgrey_camera_driver
-    #px4flow
-    #pwm_sysfs_driver
-    # specific to racecar-v2
-    # mapping
     gmapping
     hector_mapping
     robot_pose_ekf

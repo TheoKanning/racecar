@@ -1,6 +1,6 @@
 
 laser_node:
-  ip_address: 192.168.0.10
+  serial_port: /dev/rplidar
 
 imu_node:
   port: /dev/imu
