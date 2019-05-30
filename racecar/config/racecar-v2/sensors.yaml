@@ -1,6 +1,7 @@
 
 laser_node:
   serial_port: /dev/rplidar
+  frame_id: laser
 
 imu_node:
   port: /dev/imu
