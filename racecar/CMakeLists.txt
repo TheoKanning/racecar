@@ -92,6 +92,7 @@ catkin_package(
     gmapping
     hector_mapping
     robot_pose_ekf
+    laser_filters
 #  DEPENDS system_lib
 )
 

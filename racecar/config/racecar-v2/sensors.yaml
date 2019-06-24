@@ -3,6 +3,20 @@ laser_node:
   serial_port: /dev/rplidar
   frame_id: laser
 
+laser_filter:
+  tf_message_filter_target_frame: laser
+  scan_filter_chain:
+  - name: box
+    type: laser_filters/LaserScanBoxFilter
+    params:
+      box_frame: base_link
+      min_x: -0.05
+      max_x: 0.15
+      min_y: -0.15
+      max_y: 0.15
+      min_z: -0.2
+      max_z: 0.2
+
 imu_node:
   port: /dev/imu
   frame_id: base_imu_link

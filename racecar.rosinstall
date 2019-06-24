@@ -2,3 +2,4 @@
 - git: {local-name: src/vesc,                  version: RacecarJTransitory,        uri: 'git@github.com:TheoKanning/vesc.git'}
 - git: {local-name: src/racecar-controllers,   version: master,                    uri: 'https://github.com/RacecarJ/racecar-controllers.git'}
 - git: {local-name: src/rplidar_ros,           version: master,                    uri: 'https://github.com/Slamtec/rplidar_ros.git'}
+- git: {local-name: src/laser_filters,         version: indigo-devel,                    uri: 'https://github.com/ros-perception/laser_filters.git'}
