@@ -12,12 +12,12 @@
     <arg name="start" value="$(arg start)" />
   </include>
 
-  <include file="$(find racecar)/launch/includes/racecar-v1/static_transforms.launch.xml" />
+  <include file="$(find racecar)/launch/includes/racecar-v2/static_transforms.launch.xml" />
 
   <group ns="hector">
     <!-- force forward velocity -->
     <node pkg="rostopic" type="rostopic" name="fake_velocity"
-	  args="pub -r 10 vel geometry_msgs/TwistStamped '{header:  {stamp: now, frame_id: &quot;base_link&quot; }, twist: { linear: {x: 0.8, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0} } }'"/>
+      args="pub -r 10 vel geometry_msgs/TwistStamped '{header:  {stamp: now, frame_id: &quot;base_link&quot; }, twist: { linear: {x: 0.8, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0} } }'"/>
 
     <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
 	  name="laser_scan_matcher_node" output="screen">
@@ -36,6 +36,7 @@
       <param name="publish_tf" value="true"/>
       <param name="publish_pose" value="false"/>
       <param name="publish_pose_stamped" value="false"/>
+      <param name="stamped_vel" value="true"/>
     </node>
 
     <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">
