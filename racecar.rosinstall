@@ -1,4 +1,7 @@
-- git: {local-name: src/racecar,               version: RacecarJTransitory,        uri: 'https://github.com/RacecarJ/racecar.git'}
+- git: {local-name: src/racecar,               version: master,                    uri: 'https://github.com/TheoKanning/racecar.git'}
 - git: {local-name: src/vesc,                  version: RacecarJTransitory,        uri: 'https://github.com/RacecarJ/vesc.git'}
 - git: {local-name: src/racecar-controllers,   version: master,                    uri: 'https://github.com/RacecarJ/racecar-controllers.git'}
-- git: {local-name: src/zed-ros-wrapper,       version: v2.2.x,                    uri: 'https://github.com/stereolabs/zed-ros-wrapper.git'}
+- git: {local-name: src/hector_slam,           version: master,                    uri: 'https://github.com/tu-darmstadt-ros-pkg/hector_slam.git'}
+- git: {local-name: src/openslam_gmapping,     version: master,                    uri: 'https://github.com/ros-perception/openslam_gmapping.git'}
+- git: {local-name: src/slam_gmapping,         version: master,                    uri: 'https://github.com/ros-perception/slam_gmapping.git'}
+- git: {local-name: src/scan_tools,            version: master,                    uri: 'https://github.com/ccny-ros-pkg/scan_tools.git'}
