@@ -22,4 +22,13 @@
   <!-- imu -->
   <include file="$(find racecar)/launch/includes/common/sensors/$(arg imu_model).launch.xml" />
 
+  <!-- camera -->
+  <node pkg="usb_cam" type="usb_cam_node" name="camera_node">
+    <param name="video_device" value="/dev/camera" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="image_width" value="320" />
+    <param name="image_height" value="240" />
+    <param name="frame_rate" value="10" />
+  </node>
+
 </launch>
