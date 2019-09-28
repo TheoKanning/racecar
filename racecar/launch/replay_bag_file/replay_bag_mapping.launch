@@ -12,7 +12,7 @@
     <arg name="start" value="$(arg start)" />
   </include>
 
-  <include file="$(find racecar)/launch/includes/racecar-v2/static_transforms.launch.xml" />
+  <include file="$(find racecar)/launch/includes/static_transforms.launch.xml" />
 
   <group ns="hector">
     <!-- force forward velocity -->

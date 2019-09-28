@@ -1,7 +1,6 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <!-- launch script arguments -->
-  <arg name="racecar_version" default="racecar-v2" />
   <arg name="bag"/>
   <arg name="rate" default="1.0"/>
 
@@ -10,7 +9,7 @@
     <arg name="rate" value="$(arg rate)" />
   </include>
 
-  <include file="$(find racecar)/launch/includes/$(arg racecar_version)/static_transforms.launch.xml" />
+  <include file="$(find racecar)/launch/includes/static_transforms.launch.xml" />
 
   <!-- laser scan matching -->
   <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
