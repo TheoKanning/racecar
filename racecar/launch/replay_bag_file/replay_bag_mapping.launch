@@ -69,6 +69,10 @@
     <param name="maxRange" value="12"/>
     <param name="particles" value="60"/>
     <param name="delta" value="$(arg resolution)"/>
+    <param name="xmin" value="-5.0"/>
+    <param name="xmax" value="11.0"/>
+    <param name="ymin" value="-5.0"/>
+    <param name="ymax" value="11.0"/>
 <!--
     <param name="srr" value=".05"/>
     <param name="srt" value=".10"/>
