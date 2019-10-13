@@ -1,6 +1,5 @@
 <!-- -*- mode: XML -*- -->
 <launch>
-  <arg name="imu_model" default="$(optenv RACECAR_IMU razor_imu_m0)" doc="imu sensor types [razor_imu, razor_imu_m0]" />
   <arg name="run_camera" default="false"/>
 
   <!-- vehicle geometry parameters, footprint, and static transforms -->
@@ -25,8 +24,6 @@
   <include file="$(find racecar)/launch/includes/vesc.launch.xml" />
 
   <!-- start imu and laser scanner -->
-  <include file="$(find racecar)/launch/includes/sensors.launch.xml" >
-    <arg name="imu_model" value="$(arg imu_model)" />    
-  </include>
+  <include file="$(find racecar)/launch/includes/sensors.launch.xml" />
 
 </launch>

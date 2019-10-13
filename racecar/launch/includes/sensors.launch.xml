@@ -1,6 +1,5 @@
 <!-- -*- mode: XML -*- -->
 <launch>
-  <arg name="imu_model" />
   <arg name="sensors_config" default="$(find racecar)/config/sensors.yaml" />
 
   <rosparam file="$(arg sensors_config)" command="load" />
@@ -18,7 +17,7 @@
   </node>
 
   <!-- imu -->
-  <include file="$(find racecar)/launch/includes/sensors/$(arg imu_model).launch.xml" />
+  <include file="$(find racecar)/launch/includes/razor_imu.launch.xml" />
 
   <!-- camera -->
   <node pkg="usb_cam" type="usb_cam_node" name="camera_node">
