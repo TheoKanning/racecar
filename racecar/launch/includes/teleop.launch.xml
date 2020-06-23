@@ -27,6 +27,7 @@
   <include file="$(find racecar)/launch/includes/sensors.launch.xml" />
 
   <!-- laser scan matching -->
+  <!--
   <node pkg="laser_scan_matcher" type="laser_scan_matcher_node"
  name="laser_scan_matcher_node" output="screen">
 
@@ -46,5 +47,6 @@
     <param name="max_angular_correction_deg" value="10" />
     <param name="max_correspondence_dist" value="1" />
   </node>
+-->
 
 </launch>

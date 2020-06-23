@@ -10,7 +10,7 @@ steering_angle_to_servo_offset: 0.5304
 
 # publish odom to base link tf
 vesc_to_odom:
-  publish_tf: false
+  publish_tf: true
 
 vesc_driver:
   port: /dev/vesc
