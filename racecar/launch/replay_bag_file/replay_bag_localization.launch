@@ -1,0 +1,38 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <!-- launch script arguments -->
+  <arg name="bag"/>
+  <arg name="rate" default="1.0"/>
+  <arg name="start" default="0.0"/>
+  <arg name="resolution" default="0.05"/>
+
+  <include file="$(find racecar)/launch/replay_bag_file/replay_bag_file.launch">
+    <arg name="bag" value="$(arg bag)" />
+    <arg name="rate" value="$(arg rate)" />
+    <arg name="start" value="$(arg start)" />
+  </include>
+
+  <include file="$(find racecar)/launch/includes/static_transforms.launch.xml" />
+
+  <!-- known map server -->
+  <arg name="map" default="$(find racecar)/maps/map.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)" />
+
+  <!-- amcl -->
+  <arg name="use_map_topic"  default="false"/>
+  <arg name="scan_topic"     default="scan"/>
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="initial_pose_x"            value="$(arg initial_pose_x)"/>
+    <param name="initial_pose_y"            value="$(arg initial_pose_y)"/>
+    <param name="initial_pose_a"            value="$(arg initial_pose_a)"/>
+    <param name="use_map_topic"             value="$(arg use_map_topic)"/>
+    <remap from="scan"                      to="$(arg scan_topic)"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" 
+        args="-d $(find racecar)/rviz/localization.rviz" />
+
+</launch>
