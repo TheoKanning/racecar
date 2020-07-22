@@ -2,6 +2,7 @@
 laser_node:
   serial_port: /dev/rplidar
   frame_id: laser
+  angle_compensate: true
 
 laser_filter:
   tf_message_filter_target_frame: laser

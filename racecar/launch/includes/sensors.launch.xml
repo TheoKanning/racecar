@@ -7,7 +7,6 @@
   <!-- laser -->
   <node pkg="rplidar_ros" type="rplidarNode" name="laser_node">
       <remap from="scan" to="scan_raw" />
-      <param name="angle_compensate" value="true"/>
   </node>
 
   <!-- laser filter -->
