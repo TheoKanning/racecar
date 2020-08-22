@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- teleop -->
+  <include file="$(find racecar)/launch/includes/teleop.launch.xml"/>
+
+  <!-- known map server -->
+  <arg name="map" default="$(find racecar)/maps/map.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)" />
+
+  <!-- amcl -->
+  <include file="$(find racecar)/launch/includes/amcl.launch.xml"/>
+
+  <!-- twist to ackermann -->
+  <node pkg="racecar" type="cmd_vel_to_ackermann_drive.py" name="twist_to_ackermann">
+      <param name="twist_cmd_topic" value="/cmd_vel" />
+      <param name="ackermann_cmd_topic" value="/ackermann_cmd_mux/input/navigation" />
+      <param name="frame_id" value="odom" />
+      <!-- load wheelbase param -->
+      <rosparam file="$(find racecar)/config/vehicle_geometry.yaml" command="load" />
+  </node>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <rosparam file="$(find racecar)/config/move_base.yaml" command="load" />
+      <rosparam file="$(find racecar)/config/teb_local_planner.yaml" command="load" />
+      <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+  </node>
+
+</launch>

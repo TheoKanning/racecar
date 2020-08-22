@@ -31,6 +31,8 @@
   <run_depend>hector_mapping</run_depend>
   <run_depend>robot_pose_ekf</run_depend>
 
+  <run_depend>teb_local_planner</run_depend>
+
   <export>
   </export>
 </package>
