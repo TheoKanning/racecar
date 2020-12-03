@@ -1,5 +1,5 @@
 amcl:
-  min_particles:             100
+  min_particles:             50
   max_particles:             500
   kld_err:                   0.01
   kld_z:                     0.99
